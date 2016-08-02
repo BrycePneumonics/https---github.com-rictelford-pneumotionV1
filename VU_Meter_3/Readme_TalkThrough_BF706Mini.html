@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Readme_TalkThrough_BF706Mini</title>
+  
+
+  
+  
+  <style type="text/css">
+            body {font: 12px Arial, Helvetica, Verdana;}
+            table {font: 12px Arial, Helvetica, Verdana;}
+            h1 { font: bold 24px Helvetica; color:#003366; width:100%; border-bottom:1px solid #003366; margin-top:30px; margin-bottom:30px }
+            h2 { font: bold 18px Helvetica; color:#000000; border:0px; margin-top:20px; margin-bottom:20px }
+            h3 { font: bold 14px Helvetica; color:#000000; border:0px; margin-top:20px; margin-bottom:20px }
+        </style></head><body>
+<h1>
+Analog Devices, Inc. CrossCore® Embedded Studio Application Example</h1>
+
+<h2>ADSP-BF706 EZ-KIT Mini&#8482 Board Support Package</h2>
+
+<h3>Project Name: TalkThrough_BF706Mini</h3>
+
+<h3>CONTENTS</h3>
+
+<ol>
+
+  <li><a href="#DE">Description</a></li>
+  <li><a href="#PR">Processor</a></li>
+  <li><a href="#OV">Overview</a></li>
+  <li><a href="#HW">Hardware Setup</a></li>
+  <li><a href="#RUN">Running the Example</a></li>
+  <li><a href="#MACRO">User Configuration Macros</a></li>
+  <li><a href="#SS">SigmaStudio</a></li>
+  <li><a href="#REF">References</a></li>
+</ol>
+
+<h3><a name="DE">1. Description<br>
+</a></h3>
+
+<div style="text-align: left;">This example demonstrates how to use the ADAU1761 codec driver to receive audio samples from the Line Input and transmit those audio samples to the headphone output (talkthrough).<br>
+</div>
+
+<h3><a name="PR">2. Processor</a></h3>
+
+<ul>
+
+  <li>ADSP-BF706</li>
+</ul>
+
+<h3><a name="OV">3. Overview</a></h3>
+
+<div style="text-align: left;">Two SPORT receive buffers (ping/pong) and two SPORT transmit buffers (ping/pong) are used to transfer the audio data.  When a Rx and Tx buffer is available the Rx audio data is copied to the Tx buffer (TalkThrough).
+<br>
+<br>
+The audio source connected to the LINE IN will be heard on the Headphones.
+<br>    
+<br>    
+This example operates in Blocking mode.  For more information on driver modes of operation please refer to the driver help pages.<br>
+<br>
+</div>
+<ol>
+</ol>
+
+<h3><a name="HW">4. Hardware Setup</a></h3>
+
+<div style="text-align: left;">
+<ol>
+  <li>Connect an audio source (MP3 player, Computer output, ...) to the ADSP-BF706 EZ-KIT Mini LINE IN jack (J1).</li>
+  <li>Connect headphones to the ADSP-BF706 EZ-KIT Mini HP jack (J2).</li>
+  <li>Connect a USB cable from the PC to the DA USB jack on the ADSP-BF706 EZ-KIT Mini.</li>
+</ol>
+</div>
+
+<h3><a name="RUN">5. Running the Example</a><br>
+</h3>
+
+<div style="text-align: left;">
+<ol>
+  <li>Build the project, load the executable to the ADSP-BF706 EZ-KIT Mini, and run it.<br>
+  </li>
+  <li>Start the audio source which is connected to the Line In jack.<br>
+  </li>
+  <li>Listen to the headphones.  The audio source connected to the Line IN is heard in the headphones.<br>
+  </li>
+</ol>
+</div>
+
+<h3><a name="MACRO">6. User Configuration Macros</a></h3>
+<ul>
+  <li>SAMPLE_RATE - The ADAU1761 sample rate (TalkThrough_BF706Mini.c)<br>
+                    See adi_adau1761_SetSampleRate() API documentation.<br><br>
+  </li>
+  <li>NUM_AUDIO_SAMPLES - The number of audio samples (stereo) for each audio frame (TalkThrough_BF706Mini.c)<br>
+  </li>
+</ul>
+
+<h3><a name="SS">7. SigmaStudio</a></h3>
+
+<div style="text-align: left;">The SigmaStudio folder contains a SigmaStudio project and exported SigmaStudio files.  The ADSP-BF706 EZ-KIT Mini contains a SigmaDSP Audio Codec which requires SigmaStudio generated program data, parameter data and register settings to operate.  The example includes the SigmaStudio exported data located in export_IC_1.h.  The API adi_adau1761_SigmaStudioLoad() loads the data into the SigmaDSP processor.  If the provided SigmaStudio .dspproj project is modified the export files will need to be re-generated. 
+<br>
+<br>
+Refer to the SigmaStudio help system topic "Export Program and Parameters" for more information on exporting..
+</div>
+
+<span style="font-weight: bold;"></span>
+<h3><a name="REF">8. References</a></h3>
+<ul>
+  <li>ADSP-BF706 Hardware Reference Manual</li>
+  <li>ADSP-BF706 EZ-KIT Mini Schematic</li>
+  <li><a href="http://www.analog.com/adau1761">ADAU1761 Data Sheet</a></li>
+  <li><a href="http://www.analog.com/SigmaStudio">SigmaStudio</a></li>
+</ul>
+
+</body></html>
